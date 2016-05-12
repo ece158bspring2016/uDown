@@ -12,6 +12,7 @@
 		238E56551CE521D100FD9C35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 238E56531CE521D100FD9C35 /* Main.storyboard */; };
 		238E56571CE521D100FD9C35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 238E56561CE521D100FD9C35 /* Assets.xcassets */; };
 		238E565A1CE521D100FD9C35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 238E56581CE521D100FD9C35 /* LaunchScreen.storyboard */; };
+		3173D7B02364F17AC7A6E37B /* Pods_uDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 435EA6CEF6F5E3F7EDDB59D0 /* Pods_uDown.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		238E56561CE521D100FD9C35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		238E56591CE521D100FD9C35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		238E565B1CE521D100FD9C35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		289A7CEFA867012891D9CB45 /* Pods-uDown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uDown.release.xcconfig"; path = "Pods/Target Support Files/Pods-uDown/Pods-uDown.release.xcconfig"; sourceTree = "<group>"; };
+		435EA6CEF6F5E3F7EDDB59D0 /* Pods_uDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FC46A3F72CAC2E278CC5D09 /* Pods-uDown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uDown.debug.xcconfig"; path = "Pods/Target Support Files/Pods-uDown/Pods-uDown.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3173D7B02364F17AC7A6E37B /* Pods_uDown.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				238E564E1CE521D100FD9C35 /* uDown */,
 				238E564D1CE521D100FD9C35 /* Products */,
+				AB21BA0257880F8952A7DD13 /* Pods */,
+				D2F0BF0B7022C0A0DE0061EC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = uDown;
 			sourceTree = "<group>";
 		};
+		AB21BA0257880F8952A7DD13 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4FC46A3F72CAC2E278CC5D09 /* Pods-uDown.debug.xcconfig */,
+				289A7CEFA867012891D9CB45 /* Pods-uDown.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D2F0BF0B7022C0A0DE0061EC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				435EA6CEF6F5E3F7EDDB59D0 /* Pods_uDown.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 238E565E1CE521D100FD9C35 /* Build configuration list for PBXNativeTarget "uDown" */;
 			buildPhases = (
+				533FDDCA9B2D7B13893D2A34 /* 📦 Check Pods Manifest.lock */,
 				238E56481CE521D100FD9C35 /* Sources */,
 				238E56491CE521D100FD9C35 /* Frameworks */,
 				238E564A1CE521D100FD9C35 /* Resources */,
+				F23CE129E09F95DFFF2B3906 /* 📦 Embed Pods Frameworks */,
+				2FB0FCF7D6AC651A71F9E29F /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2FB0FCF7D6AC651A71F9E29F /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-uDown/Pods-uDown-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		533FDDCA9B2D7B13893D2A34 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F23CE129E09F95DFFF2B3906 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-uDown/Pods-uDown-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		238E56481CE521D100FD9C35 /* Sources */ = {
@@ -247,9 +322,15 @@
 		};
 		238E565F1CE521D100FD9C35 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FC46A3F72CAC2E278CC5D09 /* Pods-uDown.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = uDown/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oscarpan.ece158.uDown;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -258,9 +339,15 @@
 		};
 		238E56601CE521D100FD9C35 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 289A7CEFA867012891D9CB45 /* Pods-uDown.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = uDown/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oscarpan.ece158.uDown;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -286,6 +373,7 @@
 				238E56601CE521D100FD9C35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
