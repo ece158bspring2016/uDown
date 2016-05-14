@@ -59,7 +59,7 @@ class ViewController: UIViewController {
                             
                             //Display next view controller
                             
-                          /*  let nextView = (self.storyboard?.instantiateInitialViewControllerWithIdentifier("NumberPad"))! as UIViewController self.presentViewController(nextView, animated: true, completion: nil)*/
+                            let nextView = (self.storyboard?.instantiateViewControllerWithIdentifier("Profile"))! as UIViewController; self.presentViewController(nextView, animated: true, completion: nil)
                         }
                 })
             }
