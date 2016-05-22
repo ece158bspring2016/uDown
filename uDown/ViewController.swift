@@ -57,6 +57,9 @@ class ViewController: UIViewController {
                             ref.childByAppendingPath("users")
                             .childByAppendingPath(authData.uid).setValue(newUser)
                             
+                            // Store the uid for future access - handy!
+                            NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
+                            
                             //Display next view controller
                             
                             let nextView = (self.storyboard?.instantiateViewControllerWithIdentifier("Profile"))! as UIViewController; self.presentViewController(nextView, animated: true, completion: nil)

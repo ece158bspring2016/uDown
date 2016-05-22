@@ -13,6 +13,9 @@
 		238E56571CE521D100FD9C35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 238E56561CE521D100FD9C35 /* Assets.xcassets */; };
 		238E565A1CE521D100FD9C35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 238E56581CE521D100FD9C35 /* LaunchScreen.storyboard */; };
 		3173D7B02364F17AC7A6E37B /* Pods_uDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 435EA6CEF6F5E3F7EDDB59D0 /* Pods_uDown.framework */; };
+		3C30BB571CF25BD40018730E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C30BB561CF25BD40018730E /* ProfileViewController.swift */; };
+		3C30BB591CF25DD00018730E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C30BB581CF25DD00018730E /* Constants.swift */; };
+		3C30BB5B1CF25E360018730E /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C30BB5A1CF25E360018730E /* DataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		238E56591CE521D100FD9C35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		238E565B1CE521D100FD9C35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		289A7CEFA867012891D9CB45 /* Pods-uDown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uDown.release.xcconfig"; path = "Pods/Target Support Files/Pods-uDown/Pods-uDown.release.xcconfig"; sourceTree = "<group>"; };
+		3C30BB561CF25BD40018730E /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		3C30BB581CF25DD00018730E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3C30BB5A1CF25E360018730E /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		435EA6CEF6F5E3F7EDDB59D0 /* Pods_uDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FC46A3F72CAC2E278CC5D09 /* Pods-uDown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uDown.debug.xcconfig"; path = "Pods/Target Support Files/Pods-uDown/Pods-uDown.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,9 +70,12 @@
 				238E564F1CE521D100FD9C35 /* AppDelegate.swift */,
 				238E56511CE521D100FD9C35 /* ViewController.swift */,
 				238E56531CE521D100FD9C35 /* Main.storyboard */,
+				3C30BB561CF25BD40018730E /* ProfileViewController.swift */,
 				238E56561CE521D100FD9C35 /* Assets.xcassets */,
 				238E56581CE521D100FD9C35 /* LaunchScreen.storyboard */,
 				238E565B1CE521D100FD9C35 /* Info.plist */,
+				3C30BB581CF25DD00018730E /* Constants.swift */,
+				3C30BB5A1CF25E360018730E /* DataService.swift */,
 			);
 			path = uDown;
 			sourceTree = "<group>";
@@ -210,8 +219,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C30BB571CF25BD40018730E /* ProfileViewController.swift in Sources */,
 				238E56521CE521D100FD9C35 /* ViewController.swift in Sources */,
 				238E56501CE521D100FD9C35 /* AppDelegate.swift in Sources */,
+				3C30BB591CF25DD00018730E /* Constants.swift in Sources */,
+				3C30BB5B1CF25E360018730E /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
