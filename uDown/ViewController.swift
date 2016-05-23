@@ -17,9 +17,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        
       }
 
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // If we have the uid stored, the user is already logger in - no need to sign in again!
+        print(DataService.dataService.CURRENT_USER_REF);
+        if NSUserDefaults.standardUserDefaults().valueForKey("uid") != nil && DataService.dataService.CURRENT_USER_REF.authData != nil {
+            print("Inside If");
+            self.performSegueWithIdentifier("ProfileSegue", sender: nil)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -62,7 +72,7 @@ class ViewController: UIViewController {
                             
                             //Display next view controller
                             
-                            let nextView = (self.storyboard?.instantiateViewControllerWithIdentifier("Profile"))! as UIViewController; self.presentViewController(nextView, animated: true, completion: nil)
+                            self.performSegueWithIdentifier("ProfileSegue", sender: nil)
                         }
                 })
             }

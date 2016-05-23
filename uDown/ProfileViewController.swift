@@ -7,17 +7,32 @@
 //
 
 import UIKit
-
 class ProfileViewController: UIViewController {
 
-    var currentUsername = ""
-    
+
+    @IBOutlet weak var usernameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        print("Here?")
+        DataService.dataService.CURRENT_USER_REF.observeSingleEventOfType(.Value, withBlock: {snapshot in
+            print(snapshot.value["displayName"])
+            if let name = snapshot.value["displayName"] as? String{
+                print("almost there")
+                self.usernameLabel.text = name
+            }
+            }, withCancelBlock: { error in
+                print(error.description)
+        })
     }
 
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        print("We are here")
+
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
