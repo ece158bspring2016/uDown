@@ -25,7 +25,6 @@ class ViewController: UIViewController {
         // If we have the uid stored, the user is already logger in - no need to sign in again!
         print(DataService.dataService.CURRENT_USER_REF);
         if NSUserDefaults.standardUserDefaults().valueForKey("uid") != nil && DataService.dataService.CURRENT_USER_REF.authData != nil {
-            print("Inside If");
             self.performSegueWithIdentifier("ProfileSegue", sender: nil)
         }
     }
