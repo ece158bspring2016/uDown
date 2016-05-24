@@ -11,18 +11,24 @@ class ProfileViewController: UIViewController {
 
 
     @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var profileImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         print("Here?")
         DataService.dataService.CURRENT_USER_REF.observeSingleEventOfType(.Value, withBlock: {snapshot in
-            print(snapshot.value["displayName"])
             if let name = snapshot.value["displayName"] as? String{
                 print("almost there")
                 self.usernameLabel.text = name
             }
-            }, withCancelBlock: { error in
-                print(error.description)
+            if let imageUrl = snapshot.value["profileImageURL"] as? String{
+                let url = NSURL(string: imageUrl)
+                if let data = NSData(contentsOfURL: url!) {
+                    self.profileImage.image = UIImage(data: data)
+                }
+            }
+        }, withCancelBlock: { error in
+            print(error.description)
         })
     }
 

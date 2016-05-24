@@ -60,7 +60,8 @@ class ViewController: UIViewController {
                             let newUser = [
                                 "provider": authData.provider,
                                 "displayName": authData.providerData["displayName"] as? NSString as? String,
-                                "email": authData.providerData["email"] as? NSString as? String
+                                "email": authData.providerData["email"] as? NSString as? String,
+                                "profileImageURL": authData.providerData["profileImageURL"] as? NSString as? String,
                             ]
                             
                             ref.childByAppendingPath("users")
