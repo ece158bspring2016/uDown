@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		091E65D81CFA1BD5001ADA1B /* fbbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 091E65D71CFA1BD5001ADA1B /* fbbutton.png */; };
 		238E56501CE521D100FD9C35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238E564F1CE521D100FD9C35 /* AppDelegate.swift */; };
 		238E56521CE521D100FD9C35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238E56511CE521D100FD9C35 /* ViewController.swift */; };
 		238E56551CE521D100FD9C35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 238E56531CE521D100FD9C35 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		091E65D71CFA1BD5001ADA1B /* fbbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fbbutton.png; path = ../../../Desktop/fbbutton.png; sourceTree = "<group>"; };
 		238E564C1CE521D100FD9C35 /* uDown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uDown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		238E564F1CE521D100FD9C35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		238E56511CE521D100FD9C35 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				238E56531CE521D100FD9C35 /* Main.storyboard */,
 				3C30BB561CF25BD40018730E /* ProfileViewController.swift */,
 				238E56561CE521D100FD9C35 /* Assets.xcassets */,
+				091E65D71CFA1BD5001ADA1B /* fbbutton.png */,
 				238E56581CE521D100FD9C35 /* LaunchScreen.storyboard */,
 				238E565B1CE521D100FD9C35 /* Info.plist */,
 				3C30BB581CF25DD00018730E /* Constants.swift */,
@@ -161,6 +164,7 @@
 				238E565A1CE521D100FD9C35 /* LaunchScreen.storyboard in Resources */,
 				238E56571CE521D100FD9C35 /* Assets.xcassets in Resources */,
 				238E56551CE521D100FD9C35 /* Main.storyboard in Resources */,
+				091E65D81CFA1BD5001ADA1B /* fbbutton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
