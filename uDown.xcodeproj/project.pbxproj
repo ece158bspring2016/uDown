@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		091E65D81CFA1BD5001ADA1B /* fbbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 091E65D71CFA1BD5001ADA1B /* fbbutton.png */; };
 		091E65DA1CFA2533001ADA1B /* snoop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 091E65D91CFA2533001ADA1B /* snoop.jpg */; };
+		091E65DC1CFA4E06001ADA1B /* getdown1.png in Resources */ = {isa = PBXBuildFile; fileRef = 091E65DB1CFA4E06001ADA1B /* getdown1.png */; };
+		091E65DE1CFA5411001ADA1B /* getdown2.png in Resources */ = {isa = PBXBuildFile; fileRef = 091E65DD1CFA5411001ADA1B /* getdown2.png */; };
 		238E56501CE521D100FD9C35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238E564F1CE521D100FD9C35 /* AppDelegate.swift */; };
 		238E56521CE521D100FD9C35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238E56511CE521D100FD9C35 /* ViewController.swift */; };
 		238E56551CE521D100FD9C35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 238E56531CE521D100FD9C35 /* Main.storyboard */; };
@@ -23,6 +25,8 @@
 /* Begin PBXFileReference section */
 		091E65D71CFA1BD5001ADA1B /* fbbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fbbutton.png; path = ../../../Desktop/fbbutton.png; sourceTree = "<group>"; };
 		091E65D91CFA2533001ADA1B /* snoop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = snoop.jpg; path = ../../../Desktop/snoop.jpg; sourceTree = "<group>"; };
+		091E65DB1CFA4E06001ADA1B /* getdown1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = getdown1.png; path = ../../getdown1.png; sourceTree = "<group>"; };
+		091E65DD1CFA5411001ADA1B /* getdown2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = getdown2.png; path = ../../../Desktop/getdown2.png; sourceTree = "<group>"; };
 		238E564C1CE521D100FD9C35 /* uDown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uDown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		238E564F1CE521D100FD9C35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		238E56511CE521D100FD9C35 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +81,8 @@
 				3C30BB561CF25BD40018730E /* ProfileViewController.swift */,
 				238E56561CE521D100FD9C35 /* Assets.xcassets */,
 				091E65D71CFA1BD5001ADA1B /* fbbutton.png */,
+				091E65DB1CFA4E06001ADA1B /* getdown1.png */,
+				091E65DD1CFA5411001ADA1B /* getdown2.png */,
 				091E65D91CFA2533001ADA1B /* snoop.jpg */,
 				238E56581CE521D100FD9C35 /* LaunchScreen.storyboard */,
 				238E565B1CE521D100FD9C35 /* Info.plist */,
@@ -168,6 +174,8 @@
 				238E565A1CE521D100FD9C35 /* LaunchScreen.storyboard in Resources */,
 				238E56571CE521D100FD9C35 /* Assets.xcassets in Resources */,
 				238E56551CE521D100FD9C35 /* Main.storyboard in Resources */,
+				091E65DE1CFA5411001ADA1B /* getdown2.png in Resources */,
+				091E65DC1CFA4E06001ADA1B /* getdown1.png in Resources */,
 				091E65D81CFA1BD5001ADA1B /* fbbutton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
