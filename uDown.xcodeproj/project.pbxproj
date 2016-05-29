@@ -7,28 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		091E65D81CFA1BD5001ADA1B /* fbbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 091E65D71CFA1BD5001ADA1B /* fbbutton.png */; };
-		091E65DA1CFA2533001ADA1B /* snoop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 091E65D91CFA2533001ADA1B /* snoop.jpg */; };
-		091E65DC1CFA4E06001ADA1B /* getdown1.png in Resources */ = {isa = PBXBuildFile; fileRef = 091E65DB1CFA4E06001ADA1B /* getdown1.png */; };
-		091E65DE1CFA5411001ADA1B /* getdown2.png in Resources */ = {isa = PBXBuildFile; fileRef = 091E65DD1CFA5411001ADA1B /* getdown2.png */; };
-		091E65E01CFA5DE9001ADA1B /* texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 091E65DF1CFA5DE9001ADA1B /* texture.png */; };
 		238E56501CE521D100FD9C35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238E564F1CE521D100FD9C35 /* AppDelegate.swift */; };
 		238E56521CE521D100FD9C35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238E56511CE521D100FD9C35 /* ViewController.swift */; };
 		238E56551CE521D100FD9C35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 238E56531CE521D100FD9C35 /* Main.storyboard */; };
 		238E56571CE521D100FD9C35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 238E56561CE521D100FD9C35 /* Assets.xcassets */; };
 		238E565A1CE521D100FD9C35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 238E56581CE521D100FD9C35 /* LaunchScreen.storyboard */; };
 		3173D7B02364F17AC7A6E37B /* Pods_uDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 435EA6CEF6F5E3F7EDDB59D0 /* Pods_uDown.framework */; };
+		3C0E8D181CFB8F7B003BF8FA /* fbbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C0E8D141CFB8F7B003BF8FA /* fbbutton.png */; };
+		3C0E8D191CFB8F7B003BF8FA /* getdown2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C0E8D151CFB8F7B003BF8FA /* getdown2.png */; };
+		3C0E8D1A1CFB8F7B003BF8FA /* snoop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3C0E8D161CFB8F7B003BF8FA /* snoop.jpg */; };
+		3C0E8D1B1CFB8F7B003BF8FA /* texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C0E8D171CFB8F7B003BF8FA /* texture.png */; };
 		3C30BB571CF25BD40018730E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C30BB561CF25BD40018730E /* ProfileViewController.swift */; };
 		3C30BB591CF25DD00018730E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C30BB581CF25DD00018730E /* Constants.swift */; };
 		3C30BB5B1CF25E360018730E /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C30BB5A1CF25E360018730E /* DataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		091E65D71CFA1BD5001ADA1B /* fbbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fbbutton.png; path = ../../../Desktop/fbbutton.png; sourceTree = "<group>"; };
-		091E65D91CFA2533001ADA1B /* snoop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = snoop.jpg; path = ../../../Desktop/snoop.jpg; sourceTree = "<group>"; };
-		091E65DB1CFA4E06001ADA1B /* getdown1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = getdown1.png; path = ../../getdown1.png; sourceTree = "<group>"; };
-		091E65DD1CFA5411001ADA1B /* getdown2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = getdown2.png; path = ../../../Desktop/getdown2.png; sourceTree = "<group>"; };
-		091E65DF1CFA5DE9001ADA1B /* texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = texture.png; path = ../../../Desktop/texture.png; sourceTree = "<group>"; };
 		238E564C1CE521D100FD9C35 /* uDown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uDown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		238E564F1CE521D100FD9C35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		238E56511CE521D100FD9C35 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +31,10 @@
 		238E56591CE521D100FD9C35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		238E565B1CE521D100FD9C35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		289A7CEFA867012891D9CB45 /* Pods-uDown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uDown.release.xcconfig"; path = "Pods/Target Support Files/Pods-uDown/Pods-uDown.release.xcconfig"; sourceTree = "<group>"; };
+		3C0E8D141CFB8F7B003BF8FA /* fbbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fbbutton.png; sourceTree = "<group>"; };
+		3C0E8D151CFB8F7B003BF8FA /* getdown2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = getdown2.png; sourceTree = "<group>"; };
+		3C0E8D161CFB8F7B003BF8FA /* snoop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = snoop.jpg; sourceTree = "<group>"; };
+		3C0E8D171CFB8F7B003BF8FA /* texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture.png; sourceTree = "<group>"; };
 		3C30BB561CF25BD40018730E /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3C30BB581CF25DD00018730E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3C30BB5A1CF25E360018730E /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
@@ -77,16 +75,15 @@
 		238E564E1CE521D100FD9C35 /* uDown */ = {
 			isa = PBXGroup;
 			children = (
+				3C0E8D141CFB8F7B003BF8FA /* fbbutton.png */,
+				3C0E8D151CFB8F7B003BF8FA /* getdown2.png */,
+				3C0E8D161CFB8F7B003BF8FA /* snoop.jpg */,
+				3C0E8D171CFB8F7B003BF8FA /* texture.png */,
 				238E564F1CE521D100FD9C35 /* AppDelegate.swift */,
 				238E56511CE521D100FD9C35 /* ViewController.swift */,
 				238E56531CE521D100FD9C35 /* Main.storyboard */,
 				3C30BB561CF25BD40018730E /* ProfileViewController.swift */,
 				238E56561CE521D100FD9C35 /* Assets.xcassets */,
-				091E65D71CFA1BD5001ADA1B /* fbbutton.png */,
-				091E65DB1CFA4E06001ADA1B /* getdown1.png */,
-				091E65DF1CFA5DE9001ADA1B /* texture.png */,
-				091E65DD1CFA5411001ADA1B /* getdown2.png */,
-				091E65D91CFA2533001ADA1B /* snoop.jpg */,
 				238E56581CE521D100FD9C35 /* LaunchScreen.storyboard */,
 				238E565B1CE521D100FD9C35 /* Info.plist */,
 				3C30BB581CF25DD00018730E /* Constants.swift */,
@@ -173,14 +170,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				091E65DA1CFA2533001ADA1B /* snoop.jpg in Resources */,
 				238E565A1CE521D100FD9C35 /* LaunchScreen.storyboard in Resources */,
+				3C0E8D1B1CFB8F7B003BF8FA /* texture.png in Resources */,
+				3C0E8D1A1CFB8F7B003BF8FA /* snoop.jpg in Resources */,
 				238E56571CE521D100FD9C35 /* Assets.xcassets in Resources */,
+				3C0E8D191CFB8F7B003BF8FA /* getdown2.png in Resources */,
 				238E56551CE521D100FD9C35 /* Main.storyboard in Resources */,
-				091E65DE1CFA5411001ADA1B /* getdown2.png in Resources */,
-				091E65DC1CFA4E06001ADA1B /* getdown1.png in Resources */,
-				091E65D81CFA1BD5001ADA1B /* fbbutton.png in Resources */,
-				091E65E01CFA5DE9001ADA1B /* texture.png in Resources */,
+				3C0E8D181CFB8F7B003BF8FA /* fbbutton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

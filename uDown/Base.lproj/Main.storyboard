@@ -153,7 +153,7 @@
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="profile" id="msk-Sx-Tps"/>
+                                    <navigationItem title="Profile" id="msk-Sx-Tps"/>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -239,8 +239,8 @@
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="get downers" id="1q4-ge-NQX">
-                                        <barButtonItem key="leftBarButtonItem" title="back" id="kgl-Cn-vjM">
+                                    <navigationItem title="Get Downers" id="1q4-ge-NQX">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="kgl-Cn-vjM">
                                             <connections>
                                                 <segue destination="HtZ-S6-wK7" kind="modal" id="Oy2-Cv-d7m"/>
                                             </connections>
