@@ -16,6 +16,7 @@
 		23DD54B71CFBD252001D33FB /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DD54B51CFBD252001D33FB /* ActivityTableViewCell.swift */; };
 		23DD54B81CFBD252001D33FB /* ActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23DD54B61CFBD252001D33FB /* ActivityTableViewCell.xib */; };
 		23DD54BA1CFBDCD3001D33FB /* SearchCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DD54B91CFBDCD3001D33FB /* SearchCreateViewController.swift */; };
+		23DD54BC1CFBF06C001D33FB /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DD54BB1CFBF06C001D33FB /* ChatViewController.swift */; };
 		3173D7B02364F17AC7A6E37B /* Pods_uDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 435EA6CEF6F5E3F7EDDB59D0 /* Pods_uDown.framework */; };
 		3C0E8D181CFB8F7B003BF8FA /* fbbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C0E8D141CFB8F7B003BF8FA /* fbbutton.png */; };
 		3C0E8D191CFB8F7B003BF8FA /* getdown2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C0E8D151CFB8F7B003BF8FA /* getdown2.png */; };
@@ -40,6 +41,7 @@
 		23DD54B51CFBD252001D33FB /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		23DD54B61CFBD252001D33FB /* ActivityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityTableViewCell.xib; sourceTree = "<group>"; };
 		23DD54B91CFBDCD3001D33FB /* SearchCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCreateViewController.swift; sourceTree = "<group>"; };
+		23DD54BB1CFBF06C001D33FB /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		289A7CEFA867012891D9CB45 /* Pods-uDown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uDown.release.xcconfig"; path = "Pods/Target Support Files/Pods-uDown/Pods-uDown.release.xcconfig"; sourceTree = "<group>"; };
 		3C0E8D141CFB8F7B003BF8FA /* fbbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fbbutton.png; sourceTree = "<group>"; };
 		3C0E8D151CFB8F7B003BF8FA /* getdown2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = getdown2.png; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				23DD54B51CFBD252001D33FB /* ActivityTableViewCell.swift */,
 				23DD54B61CFBD252001D33FB /* ActivityTableViewCell.xib */,
 				23DD54B91CFBDCD3001D33FB /* SearchCreateViewController.swift */,
+				23DD54BB1CFBF06C001D33FB /* ChatViewController.swift */,
 			);
 			path = uDown;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				3C30BB591CF25DD00018730E /* Constants.swift in Sources */,
 				23DD54B71CFBD252001D33FB /* ActivityTableViewCell.swift in Sources */,
 				23DD54BA1CFBDCD3001D33FB /* SearchCreateViewController.swift in Sources */,
+				23DD54BC1CFBF06C001D33FB /* ChatViewController.swift in Sources */,
 				3C30BB5B1CF25E360018730E /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

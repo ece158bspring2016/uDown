@@ -73,6 +73,13 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fbbutton.png" translatesAutoresizingMaskIntoConstraints="NO" id="vmT-Ku-h59">
                                 <rect key="frame" x="255" y="362" width="87" height="65"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cz6-8B-SdA">
+                                <rect key="frame" x="192" y="588" width="31" height="21"/>
+                                <state key="normal" title="chat"/>
+                                <connections>
+                                    <segue destination="k6r-4G-xbT" kind="presentation" id="Lih-Dk-kSI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.25490196079999999" green="0.24313725489999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -275,6 +282,25 @@
             </objects>
             <point key="canvasLocation" x="2408" y="-41"/>
         </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="0cs-dt-I2M">
+            <objects>
+                <viewController id="9NK-PC-cqC" customClass="ChatViewController" customModule="uDown" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="J2V-C7-STe"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lfm-nJ-piQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jyn-3b-nfw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hgc-T8-NVq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Gp-3k-cVt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1785" y="809"/>
+        </scene>
         <!--Choose Activity-->
         <scene sceneID="eni-Td-kUe">
             <objects>
@@ -330,6 +356,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zBB-HW-z32" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3072" y="-41"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Wun-po-nKj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="k6r-4G-xbT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dle-b2-VyM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9NK-PC-cqC" kind="relationship" relationship="rootViewController" id="CF6-fh-xjw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Nb-HL-pFi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1067" y="809"/>
         </scene>
     </scenes>
     <resources>
