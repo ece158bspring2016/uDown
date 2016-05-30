@@ -7,11 +7,19 @@
 //
 
 import UIKit
+import CoreLocation
+import Firebase
+class SearchCreateViewController: UIViewController, CLLocationManagerDelegate {
 
-class SearchCreateViewController: UIViewController {
 
+    @IBOutlet weak var range: UITextField!
+    @IBOutlet weak var place: UITextField!
+    @IBOutlet weak var time: UITextField!
+    let ref = FIRDatabase.database().reference()
+    let locationManager = CLLocationManager()
+    var latitude:CLLocationDegrees = 0.0
+    var longitude:CLLocationDegrees = 0.0
 
-    
     @IBOutlet weak var activityButton: UIButton!
     var activity:String = "Grab Food" {
         didSet {
@@ -20,10 +28,58 @@ class SearchCreateViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // Ask for Authorisation from the User.
+        self.locationManager.requestAlwaysAuthorization()
+        
+        // For use in foreground
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func search(sender: AnyObject) {
+        
+        var id:String = ""
+        var uid:String = ""
+        var name:String = ""
+
+
+        let newSearch : [String : String] = [
+            "name": activity,
+            "where": place.text!,
+            "range": range.text!,
+
+            "activityTime": time.text!,
+            "searchTime": NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .ShortStyle),
+
+        ]
+        let newSearchRef = ref.child("searches").childByAutoId()
+        newSearchRef.setValue(newSearch as AnyObject)
+        newSearchRef.child("location").setValue(["latitude": latitude.description, "longitude": longitude.description])
+
+        if let user = FIRAuth.auth()?.currentUser {
+            for profile in user.providerData {
+                id = profile.uid;  // Provider-specific UID
+                name = profile.displayName!
+            }
+            uid = user.uid
+            newSearchRef.child("user").setValue(["uid": uid, "id": id, "displayName": name])
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        var locValue:CLLocationCoordinate2D = manager.location!.coordinate
+        self.latitude = locValue.latitude
+        self.longitude = locValue.longitude
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

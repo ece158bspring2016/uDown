@@ -230,7 +230,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rno-Fk-8kd">
-                                <rect key="frame" x="127" y="503" width="166" height="30"/>
+                                <rect key="frame" x="127" y="504" width="166" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -269,6 +269,13 @@
                                     <segue destination="cs0-Zn-IcD" kind="presentation" identifier="PickActivity" id="TMv-R8-8Ib"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t0J-s4-YeJ">
+                                <rect key="frame" x="127" y="592" width="166" height="30"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="search:" destination="0Ep-Vp-y3e" eventType="touchUpInside" id="5ic-YR-69Q"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.25490196079999999" green="0.24313725489999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -278,6 +285,9 @@
                     <navigationItem key="navigationItem" id="foc-Cq-FYN"/>
                     <connections>
                         <outlet property="activityButton" destination="lFb-LZ-uWS" id="ukv-0C-lwB"/>
+                        <outlet property="place" destination="QsR-ir-f6y" id="HlD-Ae-jbi"/>
+                        <outlet property="range" destination="e0x-Cd-yUE" id="zMN-b9-Vkm"/>
+                        <outlet property="time" destination="rno-Fk-8kd" id="Ukt-6E-rfN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2fX-4w-2Yk" userLabel="First Responder" sceneMemberID="firstResponder"/>
