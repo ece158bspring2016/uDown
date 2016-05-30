@@ -14,9 +14,12 @@ import FirebaseDatabaseUI
 class ActivityPickerViewController: UITableViewController {
     
     var activities:[String] = []
-    
+    var selectedActivityIndex:Int?
     let ref = FIRDatabase.database().reference().child("activities")
     var dataSource: FirebaseTableViewDataSource!
+    
+    var selectedIndex:Int?
+    var selectedActivity:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +52,6 @@ class ActivityPickerViewController: UITableViewController {
             //activityLabel.text = snap.key
             
             for values in snap.children {
-                print(values)
                 if(values.key == "name"){
                     activityLabel.text = values.value
                 }
@@ -64,6 +66,21 @@ class ActivityPickerViewController: UITableViewController {
 
     }
 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        if let index = selectedIndex {
+            let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: index, inSection: 0))
+            cell?.accessoryType = .None
+        }
+        //selectedActivity = dataSource.accessibilityElementAtIndex(indexPath.row)
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        let activityLabel: UILabel = cell!.contentView.viewWithTag(2) as! UILabel
+        selectedActivity = activityLabel.text!
+        selectedIndex = indexPath.row
+        cell?.accessoryType = .Checkmark
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -71,7 +88,7 @@ class ActivityPickerViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+  /*  override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
 
@@ -82,8 +99,15 @@ class ActivityPickerViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ActivityCell", forIndexPath: indexPath)
         cell.textLabel?.text = activities[indexPath.row]
+        
+        if indexPath.row == selectedActivityIndex {
+            cell.accessoryType = .Checkmark
+        } else {
+            cell.accessoryType = .None
+        }
+        
         return cell
-    }
+    }*/
 
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
