@@ -47,6 +47,8 @@ class ProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func cancelToProfileViewController(segue:UIStoryboardSegue) {
+    }
 
     /*
     // MARK: - Navigation
