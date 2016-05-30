@@ -12,6 +12,9 @@
 		238E56551CE521D100FD9C35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 238E56531CE521D100FD9C35 /* Main.storyboard */; };
 		238E56571CE521D100FD9C35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 238E56561CE521D100FD9C35 /* Assets.xcassets */; };
 		238E565A1CE521D100FD9C35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 238E56581CE521D100FD9C35 /* LaunchScreen.storyboard */; };
+		23DD54B21CFBCA82001D33FB /* ActivityDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DD54B11CFBCA82001D33FB /* ActivityDataSource.swift */; };
+		23DD54B71CFBD252001D33FB /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DD54B51CFBD252001D33FB /* ActivityTableViewCell.swift */; };
+		23DD54B81CFBD252001D33FB /* ActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23DD54B61CFBD252001D33FB /* ActivityTableViewCell.xib */; };
 		3173D7B02364F17AC7A6E37B /* Pods_uDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 435EA6CEF6F5E3F7EDDB59D0 /* Pods_uDown.framework */; };
 		3C0E8D181CFB8F7B003BF8FA /* fbbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C0E8D141CFB8F7B003BF8FA /* fbbutton.png */; };
 		3C0E8D191CFB8F7B003BF8FA /* getdown2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C0E8D151CFB8F7B003BF8FA /* getdown2.png */; };
@@ -32,6 +35,9 @@
 		238E56561CE521D100FD9C35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		238E56591CE521D100FD9C35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		238E565B1CE521D100FD9C35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23DD54B11CFBCA82001D33FB /* ActivityDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDataSource.swift; sourceTree = "<group>"; };
+		23DD54B51CFBD252001D33FB /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
+		23DD54B61CFBD252001D33FB /* ActivityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityTableViewCell.xib; sourceTree = "<group>"; };
 		289A7CEFA867012891D9CB45 /* Pods-uDown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uDown.release.xcconfig"; path = "Pods/Target Support Files/Pods-uDown/Pods-uDown.release.xcconfig"; sourceTree = "<group>"; };
 		3C0E8D141CFB8F7B003BF8FA /* fbbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fbbutton.png; sourceTree = "<group>"; };
 		3C0E8D151CFB8F7B003BF8FA /* getdown2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = getdown2.png; sourceTree = "<group>"; };
@@ -94,6 +100,9 @@
 				238E565B1CE521D100FD9C35 /* Info.plist */,
 				3C30BB581CF25DD00018730E /* Constants.swift */,
 				3C30BB5A1CF25E360018730E /* DataService.swift */,
+				23DD54B11CFBCA82001D33FB /* ActivityDataSource.swift */,
+				23DD54B51CFBD252001D33FB /* ActivityTableViewCell.swift */,
+				23DD54B61CFBD252001D33FB /* ActivityTableViewCell.xib */,
 			);
 			path = uDown;
 			sourceTree = "<group>";
@@ -177,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				238E565A1CE521D100FD9C35 /* LaunchScreen.storyboard in Resources */,
+				23DD54B81CFBD252001D33FB /* ActivityTableViewCell.xib in Resources */,
 				3C0E8D1F1CFB9F54003BF8FA /* GoogleService-Info.plist in Resources */,
 				3C0E8D1B1CFB8F7B003BF8FA /* texture.png in Resources */,
 				3C0E8D1A1CFB8F7B003BF8FA /* snoop.jpg in Resources */,
@@ -244,9 +254,11 @@
 			files = (
 				3C30BB571CF25BD40018730E /* ProfileViewController.swift in Sources */,
 				238E56521CE521D100FD9C35 /* ViewController.swift in Sources */,
+				23DD54B21CFBCA82001D33FB /* ActivityDataSource.swift in Sources */,
 				238E56501CE521D100FD9C35 /* AppDelegate.swift in Sources */,
 				3C0E8D1D1CFB962E003BF8FA /* ActivityPickerViewController.swift in Sources */,
 				3C30BB591CF25DD00018730E /* Constants.swift in Sources */,
+				23DD54B71CFBD252001D33FB /* ActivityTableViewCell.swift in Sources */,
 				3C30BB5B1CF25E360018730E /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

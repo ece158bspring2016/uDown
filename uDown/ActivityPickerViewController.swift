@@ -8,10 +8,15 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
+import FirebaseDatabaseUI
 
 class ActivityPickerViewController: UITableViewController {
     
     var activities:[String] = []
+    
+    let ref = FIRDatabase.database().reference().child("activities")
+    var dataSource: FirebaseTableViewDataSource!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +28,39 @@ class ActivityPickerViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         /*let ref = FIRDatabase.database().reference()
         ref.child("users").child(user!.uid).child("displayName").setValue(user?.displayName)*/
+        
+        
+        
+        
+        self.dataSource = FirebaseTableViewDataSource(ref: ref,
+                                                      nibNamed: "ActivityTableViewCell",
+                                                      cellReuseIdentifier: "cellReuseIdentifier",
+                                                      view: self.tableView)
+        
+        self.dataSource.populateCellWithBlock { (cell: UITableViewCell, obj: NSObject) -> Void in
+            let snap = obj as! FIRDataSnapshot
+            
+            // Populate cell as you see fit, like as below
+            //cell.textLabel?.text = snap.key as String
+            
+            //cell.activityLabel.text = snap.text as String
+            let emojiLabel: UILabel = cell.contentView.viewWithTag(1) as! UILabel
+            let activityLabel: UILabel = cell.contentView.viewWithTag(2) as! UILabel
+            //activityLabel.text = snap.key
+            
+            for values in snap.children {
+                print(values)
+                if(values.key == "name"){
+                    activityLabel.text = values.value
+                }
+                if(values.key == "emoji"){
+                    emojiLabel.text = values.value
+                }
+                
+            }
+        }
+        
+        self.tableView.dataSource = self.dataSource
 
     }
 
