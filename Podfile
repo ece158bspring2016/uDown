@@ -8,5 +8,5 @@ target 'uDown' do
   # Pods for uDown
   pod 'Firebase', '>= 2.5.1'
   pod 'FBSDKLoginKit', '~> 4.1'
-
+  pod 'FirebaseUI', '~> 0.4'
 end

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 class ProfileViewController: UIViewController {
 
 
@@ -16,20 +17,22 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         print("Here?")
-        DataService.dataService.CURRENT_USER_REF.observeSingleEventOfType(.Value, withBlock: {snapshot in
-            if let name = snapshot.value["displayName"] as? String{
-                print("almost there")
+        if let user = FIRAuth.auth()?.currentUser {
+            print("In if")
+            for profile in user.providerData {
+                let uid = profile.uid;  // Provider-specific UID
+                let name = profile.displayName!
+                
                 self.usernameLabel.text = name
-            }
-            if let imageUrl = snapshot.value["profileImageURL"] as? String{
+                let imageUrl = "https://graph.facebook.com/\(uid)/picture?type=large"
                 let url = NSURL(string: imageUrl)
                 if let data = NSData(contentsOfURL: url!) {
                     self.profileImage.image = UIImage(data: data)
                 }
+        
             }
-        }, withCancelBlock: { error in
-            print(error.description)
-        })
+        }
+    
     }
 
     override func viewDidAppear(animated: Bool) {

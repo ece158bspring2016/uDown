@@ -23,10 +23,10 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         
         // If we have the uid stored, the user is already logger in - no need to sign in again!
-        print(DataService.dataService.CURRENT_USER_REF);
-        if NSUserDefaults.standardUserDefaults().valueForKey("uid") != nil && DataService.dataService.CURRENT_USER_REF.authData != nil {
+        /*if let user = FIRAuth.auth()?.currentUser {
             self.performSegueWithIdentifier("ProfileSegue", sender: nil)
-        }
+        }*/
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -36,9 +36,51 @@ class ViewController: UIViewController {
     
     @IBAction func facebookLogin(sender: AnyObject)
     {
-        let ref = Firebase(url: "https://udown.firebaseio.com")
+        let ref = FIRDatabase.database().reference()
+
+        let loginManager = FBSDKLoginManager()
+        loginManager.logInWithReadPermissions(["email"], fromViewController: self, handler: { (result, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                //self.showMessagePrompt(error.localizedDescription)
+            } else if(result.isCancelled) {
+                print("FBLogin cancelled")
+            } else {
+                let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
+                let credential = FIRFacebookAuthProvider.credentialWithAccessToken(accessToken)
+                //self.firebaseLogin(credential)
+                FIRAuth.auth()?.signInWithCredential(credential) { (user, error) in
+                    if(error != nil)
+                    {
+                        print("Login failed. \(error)")
+                    }
+                    else
+                    {
+                        print("Logged In! \(user)")
+                        print(user?.providerData)
+                        for profile in user!.providerData {
+                            let email = profile.email
+                            let photoURL = profile.photoURL
+                            let uid = profile.uid
+                            ref.child("users").child(user!.uid).child("email").setValue(email)
+                            ref.child("users").child(user!.uid).child("profileImageUrl").setValue(photoURL?.absoluteString)
+                            ref.child("users").child(user!.uid).child("uid").setValue(uid)
+                        }
+                        ref.child("users").child(user!.uid).child("displayName").setValue(user?.displayName)
+                        
+                        // Store the uid for future access - handy!
+                        NSUserDefaults.standardUserDefaults().setValue(user?.uid, forKey: "uid")
+                        
+                        //Display next view controller
+                        self.performSegueWithIdentifier("ProfileSegue", sender: nil)
+
+                    }
+                }
+            }
+        })
+    
         
-        let facebookLogin = FBSDKLoginManager()
+        /*let facebookLogin = FBSDKLoginManager()
         print("Logging In")
         facebookLogin.logInWithReadPermissions(["email"], handler: {
             (facebookResult, facebookError) -> Void in
@@ -76,7 +118,7 @@ class ViewController: UIViewController {
                         }
                 })
             }
-        })
+        })*/
 
         
     }

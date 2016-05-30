@@ -17,6 +17,8 @@
 		3C0E8D191CFB8F7B003BF8FA /* getdown2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C0E8D151CFB8F7B003BF8FA /* getdown2.png */; };
 		3C0E8D1A1CFB8F7B003BF8FA /* snoop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3C0E8D161CFB8F7B003BF8FA /* snoop.jpg */; };
 		3C0E8D1B1CFB8F7B003BF8FA /* texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C0E8D171CFB8F7B003BF8FA /* texture.png */; };
+		3C0E8D1D1CFB962E003BF8FA /* ActivityPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0E8D1C1CFB962E003BF8FA /* ActivityPickerViewController.swift */; };
+		3C0E8D1F1CFB9F54003BF8FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C0E8D1E1CFB9F54003BF8FA /* GoogleService-Info.plist */; };
 		3C30BB571CF25BD40018730E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C30BB561CF25BD40018730E /* ProfileViewController.swift */; };
 		3C30BB591CF25DD00018730E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C30BB581CF25DD00018730E /* Constants.swift */; };
 		3C30BB5B1CF25E360018730E /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C30BB5A1CF25E360018730E /* DataService.swift */; };
@@ -35,6 +37,8 @@
 		3C0E8D151CFB8F7B003BF8FA /* getdown2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = getdown2.png; sourceTree = "<group>"; };
 		3C0E8D161CFB8F7B003BF8FA /* snoop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = snoop.jpg; sourceTree = "<group>"; };
 		3C0E8D171CFB8F7B003BF8FA /* texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture.png; sourceTree = "<group>"; };
+		3C0E8D1C1CFB962E003BF8FA /* ActivityPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityPickerViewController.swift; sourceTree = "<group>"; };
+		3C0E8D1E1CFB9F54003BF8FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3C30BB561CF25BD40018730E /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3C30BB581CF25DD00018730E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3C30BB5A1CF25E360018730E /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
@@ -82,9 +86,11 @@
 				238E564F1CE521D100FD9C35 /* AppDelegate.swift */,
 				238E56511CE521D100FD9C35 /* ViewController.swift */,
 				238E56531CE521D100FD9C35 /* Main.storyboard */,
+				3C0E8D1C1CFB962E003BF8FA /* ActivityPickerViewController.swift */,
 				3C30BB561CF25BD40018730E /* ProfileViewController.swift */,
 				238E56561CE521D100FD9C35 /* Assets.xcassets */,
 				238E56581CE521D100FD9C35 /* LaunchScreen.storyboard */,
+				3C0E8D1E1CFB9F54003BF8FA /* GoogleService-Info.plist */,
 				238E565B1CE521D100FD9C35 /* Info.plist */,
 				3C30BB581CF25DD00018730E /* Constants.swift */,
 				3C30BB5A1CF25E360018730E /* DataService.swift */,
@@ -171,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				238E565A1CE521D100FD9C35 /* LaunchScreen.storyboard in Resources */,
+				3C0E8D1F1CFB9F54003BF8FA /* GoogleService-Info.plist in Resources */,
 				3C0E8D1B1CFB8F7B003BF8FA /* texture.png in Resources */,
 				3C0E8D1A1CFB8F7B003BF8FA /* snoop.jpg in Resources */,
 				238E56571CE521D100FD9C35 /* Assets.xcassets in Resources */,
@@ -238,6 +245,7 @@
 				3C30BB571CF25BD40018730E /* ProfileViewController.swift in Sources */,
 				238E56521CE521D100FD9C35 /* ViewController.swift in Sources */,
 				238E56501CE521D100FD9C35 /* AppDelegate.swift in Sources */,
+				3C0E8D1D1CFB962E003BF8FA /* ActivityPickerViewController.swift in Sources */,
 				3C30BB591CF25DD00018730E /* Constants.swift in Sources */,
 				3C30BB5B1CF25E360018730E /* DataService.swift in Sources */,
 			);
