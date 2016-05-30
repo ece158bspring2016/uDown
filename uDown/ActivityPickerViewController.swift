@@ -7,16 +7,11 @@
 //
 
 import UIKit
+import Firebase
 
 class ActivityPickerViewController: UITableViewController {
     
-    var activities:[String] = [
-        "Angry Birds",
-        "Chess",
-        "Russian Roulette",
-        "Spin the Bottle",
-        "Texas Hold'em Poker",
-        "Tic-Tac-Toe"]
+    var activities:[String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +21,9 @@ class ActivityPickerViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        /*let ref = FIRDatabase.database().reference()
+        ref.child("users").child(user!.uid).child("displayName").setValue(user?.displayName)*/
+
     }
 
     override func didReceiveMemoryWarning() {
