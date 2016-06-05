@@ -9,17 +9,17 @@ PODS:
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.12.0):
     - FBSDKCoreKit
-  - Firebase (3.2.0):
-    - Firebase/Core (= 3.2.0)
-  - Firebase/Analytics (3.2.0):
+  - Firebase (3.2.1):
+    - Firebase/Core (= 3.2.1)
+  - Firebase/Analytics (3.2.1):
     - FirebaseAnalytics (= 3.2.0)
-  - Firebase/Auth (3.2.0):
-    - Firebase/Analytics (= 3.2.0)
+  - Firebase/Auth (3.2.1):
+    - Firebase/Analytics (= 3.2.1)
     - FirebaseAuth (= 3.0.2)
-  - Firebase/Core (3.2.0):
-    - Firebase/Analytics (= 3.2.0)
-  - Firebase/Database (3.2.0):
-    - Firebase/Analytics (= 3.2.0)
+  - Firebase/Core (3.2.1):
+    - Firebase/Analytics (= 3.2.1)
+  - Firebase/Database (3.2.1):
+    - Firebase/Analytics (= 3.2.1)
     - FirebaseDatabase (= 3.0.1)
   - FirebaseAnalytics (3.2.0):
     - FirebaseInstanceID (~> 1.0)
@@ -53,6 +53,8 @@ PODS:
   - FirebaseUI/Google (0.4.0):
     - FirebaseUI/AuthBase
     - GoogleSignIn (~> 4.0)
+  - GeoFire (1.1.2):
+    - Firebase (~> 3.2)
   - GoogleAppUtilities (1.1.1):
     - GoogleSymbolUtilities (~> 1.0)
   - GoogleAuthUtilities (2.0.1):
@@ -70,7 +72,7 @@ PODS:
   - GoogleSymbolUtilities (1.1.1)
   - GoogleUtilities (1.3.1):
     - GoogleSymbolUtilities (~> 1.0)
-  - JSQMessagesViewController (7.3.0):
+  - JSQMessagesViewController (7.3.1):
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
 
@@ -78,18 +80,29 @@ DEPENDENCIES:
   - FBSDKLoginKit (~> 4.1)
   - Firebase (>= 2.5.1)
   - FirebaseUI (~> 0.4)
+  - GeoFire (from `https://github.com/oscarpan/geofire-objc.git`)
   - JSQMessagesViewController
+
+EXTERNAL SOURCES:
+  GeoFire:
+    :git: https://github.com/oscarpan/geofire-objc.git
+
+CHECKOUT OPTIONS:
+  GeoFire:
+    :commit: c73d7071da5598a3c3c7072401fc0ae054b53987
+    :git: https://github.com/oscarpan/geofire-objc.git
 
 SPEC CHECKSUMS:
   Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
   FBSDKCoreKit: 6e56d5a2a64a755ad4efb5dbeee8f82fb1b99775
   FBSDKLoginKit: 03f68a8d48c2c8bb81d7eb8097973d483543e1f6
-  Firebase: 6d4012da1598732a2b43f16d8355eca90f94ed59
+  Firebase: 6c80ac28d59d06bfd9152a7b6ea17625ca93183d
   FirebaseAnalytics: 6f75b04e6bfb8e0b6e9ef298e04c24eea3b13863
   FirebaseAuth: 94b851fc345ce98036dfedfdc2eddeaef8fa3b4c
   FirebaseDatabase: 34301d11621a83546f39f670d256477ba6f7fcea
   FirebaseInstanceID: d014d574053a2fe84478f12f7bae96979e7051bb
   FirebaseUI: 691e0f500c762a4c8b5b6ed93c011e871ecd8aad
+  GeoFire: 228e7db7a8daa3eee42c6064ad80b6f4e2fa3428
   GoogleAppUtilities: f1730f91f67767b453c289577040dd3f425ffdc7
   GoogleAuthUtilities: d7a19615cd7627688afcf181737f1011ee8b5a23
   GoogleInterchangeUtilities: def8415a862effc67d549d5b5b0b9c7a2f97d4de
@@ -97,9 +110,9 @@ SPEC CHECKSUMS:
   GoogleSignIn: 09036ed61f8e75f1424100d63f7719480b2428c3
   GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
-  JSQMessagesViewController: aa79a81b21387430d66aa657e5d1c5494b0ba307
+  JSQMessagesViewController: 3847120a97a7ab3bdc701f166c59f3955f7801c7
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
 
-PODFILE CHECKSUM: d7464e9ded3f7decfe3fe345fc1aa51577d802c1
+PODFILE CHECKSUM: 7df9e973cb499d4e0ef34099ad200d9521bd82bc
 
 COCOAPODS: 1.0.0

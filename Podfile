@@ -10,4 +10,5 @@ target 'uDown' do
   pod 'FBSDKLoginKit', '~> 4.1'
   pod 'FirebaseUI', '~> 0.4'
   pod 'JSQMessagesViewController'
+  pod 'GeoFire', :git => 'https://github.com/oscarpan/geofire-objc.git'
 end
