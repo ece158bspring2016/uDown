@@ -20,6 +20,7 @@ class ActivityPickerViewController: UITableViewController {
     
     var selectedIndex:Int?
     var selectedActivity:String?
+    var selectedActivityEmoji:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,7 +77,9 @@ class ActivityPickerViewController: UITableViewController {
         //selectedActivity = dataSource.accessibilityElementAtIndex(indexPath.row)
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         let activityLabel: UILabel = cell!.contentView.viewWithTag(2) as! UILabel
+        let activityEmojiLabel: UILabel = cell!.contentView.viewWithTag(1) as! UILabel
         selectedActivity = activityLabel.text!
+        selectedActivityEmoji = activityEmojiLabel.text!
         selectedIndex = indexPath.row
         cell?.accessoryType = .Checkmark
     }

@@ -41,13 +41,11 @@ class ChatViewController: JSQMessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBubbles()
-        messageRef = rootRef.child("messages")
-        
-        self.senderId = "11"
-        self.senderDisplayName = "Test"
+        //messageRef = rootRef.child("messages")
         
         for profile in (FIRAuth.auth()?.currentUser?.providerData)! {
-            self.receiverId = profile.uid;
+            self.senderId = profile.uid;
+            self.senderDisplayName = profile.displayName;
         }
         
         let imageUrl = "https://graph.facebook.com/\(receiverId)/picture?width=64&height=64"
@@ -132,7 +130,7 @@ class ChatViewController: JSQMessagesViewController {
     }
     
     private func observeTyping() {
-        let typingIndicatorRef = rootRef.child("typingIndicator")
+        let typingIndicatorRef = rootRef.child("typingIndicator").child(messageRef.key)
         userIsTypingRef = typingIndicatorRef.child(senderId)
         userIsTypingRef.onDisconnectRemoveValue()
         usersTypingQuery = typingIndicatorRef.queryOrderedByValue().queryEqualToValue(true)
