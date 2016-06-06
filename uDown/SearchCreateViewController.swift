@@ -54,14 +54,15 @@ class SearchCreateViewController: UIViewController, CLLocationManagerDelegate {
             "name": activity,
             "where": place.text!,
             "range": range.text!,
+            "latitude": latitude.description,
+            "longitude": longitude.description,
 
             "activityTime": time.text!,
             "searchTime": NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .ShortStyle),
 
         ]
         let newSearchRef = ref.child("searches").childByAutoId()
-        newSearchRef.setValue(newSearch as AnyObject)
-        newSearchRef.child("location").setValue(["latitude": latitude.description, "longitude": longitude.description])
+        newSearchRef.setValue(newSearch)
 
         if let user = FIRAuth.auth()?.currentUser {
             for profile in user.providerData {
@@ -71,10 +72,38 @@ class SearchCreateViewController: UIViewController, CLLocationManagerDelegate {
             uid = user.uid
             newSearchRef.child("user").setValue(["uid": uid, "id": id, "displayName": name])
         }
+        
+        
+        ref.child("searches").observeEventType(FIRDataEventType.Value, withBlock: { (snapshot) in
+            for child in snapshot.children {
+                let searchDict = snapshot.childSnapshotForPath(child.key).value as! [String : AnyObject]
+                print(searchDict)
+                if(child.key != newSearchRef.key && searchDict["name"] as! String == self.activity){
+                    let currentLoc = CLLocation(latitude: self.latitude, longitude: self.longitude)
+                    let searchLat = Double(searchDict["latitude"] as! String)
+                    let searchLong = Double(searchDict["longitude"] as! String)
+                    let searchLoc = CLLocation(latitude: searchLat!, longitude: searchLong!)
+                    let distance = currentLoc.distanceFromLocation(searchLoc)
+                    print("Comparing \(searchDict["searchTime"]): \(distance) to \(self.range.text)")
+                    if(distance < Double(self.range.text!)){
+                        print("Match found! We are in range")
+                        
+                        let matched: [String: String] = [
+                            "matchTime": NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .ShortStyle)
+                        ]
+                        
+                        self.ref.child("searches").child(child.key).child("matches").child(newSearchRef.key).setValue(matched)
+                        newSearchRef.child("matches").child(child.key).setValue(matched)
+                    }
+                }
+            }
+            
+            
+        })
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        var locValue:CLLocationCoordinate2D = manager.location!.coordinate
+        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
         self.latitude = locValue.latitude
         self.longitude = locValue.longitude
         print("locations = \(locValue.latitude) \(locValue.longitude)")
