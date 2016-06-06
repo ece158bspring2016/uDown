@@ -207,6 +207,9 @@
                             <imageView userInteractionEnabled="NO" alpha="0.34999999403953552" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="texture.png" translatesAutoresizingMaskIntoConstraints="NO" id="VT8-X3-YiX">
                                 <rect key="frame" x="-6" y="752" width="427" height="387"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="emptyField.png" translatesAutoresizingMaskIntoConstraints="NO" id="xFZ-m3-rtc">
+                                <rect key="frame" x="98" y="320" width="173" height="34"/>
+                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="range/visibility" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e0x-Cd-yUE">
                                 <rect key="frame" x="105" y="230" width="166" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -274,15 +277,6 @@
                                 <color key="textColor" red="0.1151278147" green="1" blue="0.98950398819999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFb-LZ-uWS">
-                                <rect key="frame" x="36" y="320" width="213" height="34"/>
-                                <state key="normal" title="Activity">
-                                    <color key="titleColor" white="0.79018980704697983" alpha="0.82427262931034484" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="cs0-Zn-IcD" kind="presentation" identifier="PickActivity" id="TMv-R8-8Ib"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t0J-s4-YeJ">
                                 <rect key="frame" x="105" y="555" width="166" height="30"/>
                                 <state key="normal" title="Search"/>
@@ -290,9 +284,15 @@
                                     <action selector="search:" destination="0Ep-Vp-y3e" eventType="touchUpInside" id="5ic-YR-69Q"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="emptyField.png" translatesAutoresizingMaskIntoConstraints="NO" id="xFZ-m3-rtc">
-                                <rect key="frame" x="98" y="320" width="173" height="34"/>
-                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFb-LZ-uWS">
+                                <rect key="frame" x="30" y="320" width="213" height="34"/>
+                                <state key="normal" title="activity">
+                                    <color key="titleColor" white="0.79018980704697983" alpha="0.82427262931034484" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="cs0-Zn-IcD" kind="presentation" identifier="PickActivity" id="TMv-R8-8Ib"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.25490196079999999" green="0.24313725489999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
