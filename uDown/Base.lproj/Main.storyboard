@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -77,7 +77,7 @@
                                 <rect key="frame" x="192" y="588" width="31" height="21"/>
                                 <state key="normal" title="chat"/>
                                 <connections>
-                                    <segue destination="k6r-4G-xbT" kind="presentation" id="Lih-Dk-kSI"/>
+                                    <segue destination="k6r-4G-xbT" kind="presentation" identifier="" id="Lih-Dk-kSI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -163,6 +163,13 @@
                                     <navigationItem title="Profile" id="msk-Sx-Tps"/>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hex-lc-WUW">
+                                <rect key="frame" x="162" y="445" width="89" height="30"/>
+                                <state key="normal" title="My Searches"/>
+                                <connections>
+                                    <segue destination="A5l-Sp-xeF" kind="show" id="xq2-XH-qWG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.25490196079999999" green="0.24313725489999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -295,7 +302,36 @@
             </objects>
             <point key="canvasLocation" x="2408" y="-41"/>
         </scene>
-        <!--Chat View Controller-->
+        <!--Matches-->
+        <scene sceneID="rX6-YJ-A51">
+            <objects>
+                <tableViewController id="Wfj-ao-Xqd" customClass="MyMatchesTableViewController" customModule="uDown" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="e6R-p3-MvC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="Wfj-ao-Xqd" id="afb-G7-aTc"/>
+                            <outlet property="delegate" destination="Wfj-ao-Xqd" id="6Xd-h4-rVW"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Matches" id="c6w-PO-bs2">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="QNx-Kf-Xl2">
+                            <connections>
+                                <segue destination="TC6-Py-Mrn" kind="unwind" unwindAction="cancelToMySearchesViewController:" id="Stv-KQ-cdB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="k6r-4G-xbT" kind="presentation" identifier="MatchToChat" id="jxy-ER-cdy"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mgm-wS-Pyz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="TC6-Py-Mrn" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3072" y="1754"/>
+        </scene>
+        <!--Chat-->
         <scene sceneID="0cs-dt-I2M">
             <objects>
                 <viewController id="9NK-PC-cqC" customClass="ChatViewController" customModule="uDown" customModuleProvider="target" sceneMemberID="viewController">
@@ -308,11 +344,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="hgc-T8-NVq"/>
+                    <navigationItem key="navigationItem" title="Chat" id="hgc-T8-NVq">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="pqk-Lg-UaV">
+                            <connections>
+                                <segue destination="VWm-mc-cE7" kind="unwind" unwindAction="cancelToMyMatchesViewController:" id="6jJ-RA-tjk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Gp-3k-cVt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="VWm-mc-cE7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1785" y="809"/>
+            <point key="canvasLocation" x="3672" y="2765"/>
         </scene>
         <!--Choose Activity-->
         <scene sceneID="eni-Td-kUe">
@@ -382,6 +425,35 @@
             </objects>
             <point key="canvasLocation" x="3072" y="-41"/>
         </scene>
+        <!--My Searches-->
+        <scene sceneID="EUk-TV-cbY">
+            <objects>
+                <tableViewController id="h1I-xE-bss" customClass="MySearchesTableViewController" customModule="uDown" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="EJn-SK-YeN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="h1I-xE-bss" id="Gyh-YA-LXA"/>
+                            <outlet property="delegate" destination="h1I-xE-bss" id="z3I-1A-Vp5"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="My Searches" id="gjw-AP-dDs">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="2mH-sP-DUE">
+                            <connections>
+                                <segue destination="R7f-1y-3H2" kind="unwind" unwindAction="cancelToProfileViewController:" id="xdz-b9-Nh6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="9XO-zM-H8u" kind="show" identifier="SearchToMatch" id="JS0-Ao-YtL"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LHv-Mc-mWg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="R7f-1y-3H2" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2408" y="866"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Wun-po-nKj">
             <objects>
@@ -398,7 +470,43 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Nb-HL-pFi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1067" y="809"/>
+            <point key="canvasLocation" x="3072" y="2765"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ayc-9Z-eIb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="A5l-Sp-xeF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OWM-Vy-Zvl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="h1I-xE-bss" kind="relationship" relationship="rootViewController" id="xCI-Wd-oHS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nca-uM-iVm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1785" y="866"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="00g-bV-U6F">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9XO-zM-H8u" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5cS-km-2Yf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Wfj-ao-Xqd" kind="relationship" relationship="rootViewController" id="phf-WG-ihW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nR0-9N-tJ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2408" y="1754"/>
         </scene>
     </scenes>
     <resources>
@@ -407,4 +515,7 @@
         <image name="snoop.jpg" width="400" height="400"/>
         <image name="texture.png" width="300" height="301"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="jxy-ER-cdy"/>
+    </inferredMetricsTieBreakers>
 </document>

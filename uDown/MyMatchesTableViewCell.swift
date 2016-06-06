@@ -1,5 +1,5 @@
 //
-//  MySearchesTableViewCell.swift
+//  MyMatchesTableViewCell.swift
 //  uDown
 //
 //  Created by Oscar Pan on 6/5/16.
@@ -8,13 +8,15 @@
 
 import UIKit
 
-class MySearchesTableViewCell: UITableViewCell {
-
-    var searchKey:String = ""
+class MyMatchesTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var emojiLabel: UILabel!
-    @IBOutlet weak var activityLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var whereLabel: UILabel!
+    
+    var matchKey:String = ""
+    var messageKey:String = ""
+    var receiverId:String = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -51,6 +51,14 @@ class SearchCreateViewController: UIViewController, CLLocationManagerDelegate {
         var uid:String = ""
         var name:String = ""
 
+        if let user = FIRAuth.auth()?.currentUser {
+            for profile in user.providerData {
+                id = profile.uid;  // Provider-specific UID
+                name = profile.displayName!
+            }
+            uid = user.uid
+            //newSearchRef.child("user").setValue(["uid": uid, "id": id, "displayName": name])
+        }
 
         let newSearch : [String : String] = [
             "activityName": activity,
@@ -59,38 +67,34 @@ class SearchCreateViewController: UIViewController, CLLocationManagerDelegate {
             "range": range.text!,
             "latitude": latitude.description,
             "longitude": longitude.description,
-
+            
+            "user_uid": uid,
+            "user_id": id,
+            "user_displayName": name,
+            
             "activityTime": time.text!,
             "searchTime": NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .ShortStyle),
 
         ]
         let newSearchRef = ref.child("searches").childByAutoId()
         newSearchRef.setValue(newSearch)
-
-        if let user = FIRAuth.auth()?.currentUser {
-            for profile in user.providerData {
-                id = profile.uid;  // Provider-specific UID
-                name = profile.displayName!
-            }
-            uid = user.uid
-            newSearchRef.child("user").setValue(["uid": uid, "id": id, "displayName": name])
-        }
-        
     
         let usersSearch: [String: String] = [
             "activityName": activity,
-            "activityEmoji": activity,
+            "activityEmoji": activityEmoji,
             "searchTime": NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .ShortStyle),
         ]
         
         ref.child("users").child((FIRAuth.auth()?.currentUser?.uid)!).child("searches").child(newSearchRef.key).setValue(usersSearch)
         
         
-        ref.child("searches").observeEventType(FIRDataEventType.Value, withBlock: { (snapshot) in
+        ref.child("searches").observeSingleEventOfType(.Value, withBlock: { (snapshot) in
             for child in snapshot.children {
+                let searchKey = snapshot.childSnapshotForPath(child.key).key
                 let searchDict = snapshot.childSnapshotForPath(child.key).value as! [String : AnyObject]
                 print(searchDict)
-                if(child.key != newSearchRef.key && searchDict["activityName"] as! String == self.activity){
+                print("Compare: \(searchKey) to \(newSearchRef.key)")
+                if(searchKey != newSearchRef.key && searchDict["activityName"] as! String == self.activity){
                     let currentLoc = CLLocation(latitude: self.latitude, longitude: self.longitude)
                     let searchLat = Double(searchDict["latitude"] as! String)
                     let searchLong = Double(searchDict["longitude"] as! String)
@@ -100,12 +104,48 @@ class SearchCreateViewController: UIViewController, CLLocationManagerDelegate {
                     if(distance < Double(self.range.text!)){
                         print("Match found! We are in range")
                         
-                        let matched: [String: String] = [
+                        
+                        let newMessage: [String: String] = [
+                            "senderId": "uDownasdf",
+                            "text": "Hey! We matched!"
+                        ]
+                        let newMessageRef = self.ref.child("messages").childByAutoId()
+                        newMessageRef.childByAutoId().setValue(newMessage)
+                        
+                        let myMatched: [String: String] = [
+                            "receiverUid": searchDict["user_uid"] as! String,
+                            "receiverId": searchDict["user_id"] as! String,
+                            "receiverName": searchDict["user_displayName"] as! String,
+                            "where": searchDict["where"] as! String,
+                            "activityTime": searchDict["activityTime"] as! String,
+                            "latitude": searchDict["latitude"] as! String,
+                            "longitude": searchDict["longitude"] as! String,
+                            "messages": newMessageRef.key,
                             "matchTime": NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .ShortStyle)
                         ]
+                        self.ref.child("users").child(uid).child("searches").child(newSearchRef.key).child("matches").child(searchKey).setValue(myMatched)
                         
-                        self.ref.child("searches").child(child.key).child("matches").child(newSearchRef.key).setValue(matched)
-                        newSearchRef.child("matches").child(child.key).setValue(matched)
+                        let theirMatched: [String: String] = [
+                            "receiverUid": uid,
+                            "receiverId": id,
+                            "receiverName": name,
+                            "where": self.place.text!,
+                            "activityTime": self.time.text!,
+                            "latitude": self.latitude.description,
+                            "longitude": self.longitude.description,
+                            "messages": newMessageRef.key,
+                            "matchTime": NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .ShortStyle)
+                        ]
+                    
+                        self.ref.child("users").child(searchDict["user_uid"] as! String).child("searches").child(searchKey).child("matches").child(newSearchRef.key).setValue(theirMatched)
+                        
+                        
+                        
+                        
+                        
+                        
+                        //newSearchRef.child("matches").child(child.key).setValue(myMatched)
+                        //self.ref.child("searches").child(child.key).child("matches").child(newSearchRef.key).setValue(theirMatched)
                     }
                 }
             }
