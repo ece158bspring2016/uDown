@@ -26,6 +26,8 @@ class SearchCreateViewController: UIViewController, CLLocationManagerDelegate {
             activityButton.setTitle(activity, forState: UIControlState.Normal)
         }
     }
+    var activityEmoji:String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,7 +53,8 @@ class SearchCreateViewController: UIViewController, CLLocationManagerDelegate {
 
 
         let newSearch : [String : String] = [
-            "name": activity,
+            "activityName": activity,
+            "activityEmoji": activityEmoji,
             "where": place.text!,
             "range": range.text!,
             "latitude": latitude.description,
@@ -73,12 +76,21 @@ class SearchCreateViewController: UIViewController, CLLocationManagerDelegate {
             newSearchRef.child("user").setValue(["uid": uid, "id": id, "displayName": name])
         }
         
+    
+        let usersSearch: [String: String] = [
+            "activityName": activity,
+            "activityEmoji": activity,
+            "searchTime": NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .ShortStyle),
+        ]
+        
+        ref.child("users").child((FIRAuth.auth()?.currentUser?.uid)!).child("searches").child(newSearchRef.key).setValue(usersSearch)
+        
         
         ref.child("searches").observeEventType(FIRDataEventType.Value, withBlock: { (snapshot) in
             for child in snapshot.children {
                 let searchDict = snapshot.childSnapshotForPath(child.key).value as! [String : AnyObject]
                 print(searchDict)
-                if(child.key != newSearchRef.key && searchDict["name"] as! String == self.activity){
+                if(child.key != newSearchRef.key && searchDict["activityName"] as! String == self.activity){
                     let currentLoc = CLLocation(latitude: self.latitude, longitude: self.longitude)
                     let searchLat = Double(searchDict["latitude"] as! String)
                     let searchLong = Double(searchDict["longitude"] as! String)
@@ -119,8 +131,10 @@ class SearchCreateViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func doneSearchCreateViewController(segue:UIStoryboardSegue) {
         if let activityPickerViewController = segue.sourceViewController as? ActivityPickerViewController,
-            selectedActivity = activityPickerViewController.selectedActivity {
+            selectedActivity = activityPickerViewController.selectedActivity,
+            selectedActivityEmoji = activityPickerViewController.selectedActivityEmoji{
                 activity = selectedActivity
+                activityEmoji = selectedActivityEmoji
         }
     }
     
