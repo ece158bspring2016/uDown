@@ -15,8 +15,8 @@ class ActivityPickerViewController: UITableViewController {
     
     var activities:[String] = []
     var selectedActivityIndex:Int?
-    let ref = FIRDatabase.database().reference().child("activities")
-    var dataSource: FirebaseTableViewDataSource!
+    let ref = FIRDatabase.database().reference().child("activities") //get a reference to the activities table on db
+    var dataSource: FirebaseTableViewDataSource! //This will be the variable to hold information for FirebaseUI
     
     var selectedIndex:Int?
     var selectedActivity:String?
@@ -35,12 +35,14 @@ class ActivityPickerViewController: UITableViewController {
         
         
         
-        
+        //Store information about activites from Firebase into variable that can be used by
+        //FirebaseUI
         self.dataSource = FirebaseTableViewDataSource(ref: ref,
                                                       nibNamed: "ActivityTableViewCell",
                                                       cellReuseIdentifier: "cellReuseIdentifier",
                                                       view: self.tableView)
         
+        //Allow FirebaseUI to populate the table with information pulled from Firebase
         self.dataSource.populateCellWithBlock { (cell: UITableViewCell, obj: NSObject) -> Void in
             let snap = obj as! FIRDataSnapshot
             
@@ -68,19 +70,26 @@ class ActivityPickerViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        //Animation for deselect
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
+        //If another option was selected earlier, deselect it
         if let index = selectedIndex {
             let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: index, inSection: 0))
             cell?.accessoryType = .None
         }
         //selectedActivity = dataSource.accessibilityElementAtIndex(indexPath.row)
+        
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         let activityLabel: UILabel = cell!.contentView.viewWithTag(2) as! UILabel
         let activityEmojiLabel: UILabel = cell!.contentView.viewWithTag(1) as! UILabel
+        
+        //Save new activity returned to previous controller
         selectedActivity = activityLabel.text!
         selectedActivityEmoji = activityEmojiLabel.text!
         selectedIndex = indexPath.row
+        //Checkmark the new activity and save it to be returned to previous controller
         cell?.accessoryType = .Checkmark
     }
     
