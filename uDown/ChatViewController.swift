@@ -43,25 +43,25 @@ class ChatViewController: JSQMessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBubbles()
-        //messageRef = rootRef.child("messages")
-        
+
+        // get current user information for senderId
         for profile in (FIRAuth.auth()?.currentUser?.providerData)! {
             self.senderId = profile.uid;
             self.senderDisplayName = profile.displayName;
         }
         
+        // get profile image for the matched user
         let imageUrl = "https://graph.facebook.com/\(receiverId)/picture?width=64&height=64"
         print(imageUrl)
         let url = NSURL(string: imageUrl)
         if let data = NSData(contentsOfURL: url!) {
             self.incomingAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(data: data)!, diameter: 64)
         }
-        
-        
-        // Remove Attachment
+
+        // Remove Attachment icon
         self.inputToolbar?.contentView?.leftBarButtonItem = nil
         
-        // No avatars
+        // No outgoing avatars
         //collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSizeZero
         collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero
     }
@@ -85,10 +85,10 @@ class ChatViewController: JSQMessagesViewController {
     }
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageBubbleImageDataSource! {
-        let message = messages[indexPath.item] // 1
-        if message.senderId == senderId { // 2
+        let message = messages[indexPath.item]
+        if message.senderId == senderId {
             return outgoingBubbleImageView
-        } else { // 3
+        } else {
             return incomingBubbleImageView
         }
     }
@@ -98,37 +98,31 @@ class ChatViewController: JSQMessagesViewController {
         
         let message = messages[indexPath.item]
         
-        if message.senderId == senderId { // 1
-            cell.textView!.textColor = UIColor.whiteColor() // 2
+        if message.senderId == senderId {
+            cell.textView!.textColor = UIColor.whiteColor()
         } else {
-            cell.textView!.textColor = UIColor.blackColor() // 3
+            cell.textView!.textColor = UIColor.blackColor()
         }
         
         return cell
     }
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageAvatarImageDataSource! {
-        //if messages[indexPath.item].senderId != self.senderId {
-            return incomingAvatar
-        //}
-        //return nil
+        return incomingAvatar
     }
     
     private func observeMessages() {
         
+        // ensure that messages are only added once
         if(loaded == false){
-            // 1
+            
             let messagesQuery = messageRef.queryLimitedToLast(25)
-            // 2
             messagesQuery.observeEventType(.ChildAdded) { (snapshot: FIRDataSnapshot!) in
-                // 3
                 let id = snapshot.value!["senderId"] as! String
                 let text = snapshot.value!["text"] as! String
                 
-                // 4
                 self.addMessage(id, text: text)
                 
-                // 5
                 self.finishReceivingMessage()
             }
             
@@ -170,17 +164,17 @@ class ChatViewController: JSQMessagesViewController {
     
     override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
         
-        let itemRef = messageRef.childByAutoId() // 1
+        // create the message on databases
+        let itemRef = messageRef.childByAutoId()
         let messageItem = [ // 2
             "text": text,
             "senderId": senderId
         ]
-        itemRef.setValue(messageItem) // 3
+        itemRef.setValue(messageItem)
         
-        // 4
+        // play sound
         JSQSystemSoundPlayer.jsq_playMessageSentSound()
         
-        // 5
         finishSendingMessage()
         isTyping = false
     }
@@ -197,6 +191,9 @@ class ChatViewController: JSQMessagesViewController {
         super.prepareForSegue(segue, sender: sender)
         if(segue.identifier == "ChatToBeacon"){
             let beaconVc = segue.destinationViewController as! iBeaconViewController
+            // setup segue to find view
+            // minor1 = ranging minor value
+            // minor2 = advertising minor value
             if(match == "my"){
                 beaconVc.minor1 = 54627
                 beaconVc.minor2 = 54628

@@ -14,6 +14,7 @@ class MyMatchesTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var whereLabel: UILabel!
     
+    // meta data about the current match cell used when segue to chat
     var matchKey:String = ""
     var messageKey:String = ""
     var receiverId:String = ""

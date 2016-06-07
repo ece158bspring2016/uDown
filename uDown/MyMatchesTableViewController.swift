@@ -13,8 +13,8 @@ import FirebaseDatabaseUI
 
 class MyMatchesTableViewController: UITableViewController {
     
+    // Reference passed in from MySearchesTableViewController
     var ref: FIRDatabaseReference!
-    //let ref = FIRDatabase.database().reference().child("users").child((FIRAuth.auth()?.currentUser?.uid)!).child("searches")
     var dataSource: FirebaseTableViewDataSource!
     var selectedMatchKey:String = ""
     var selectedMessageKey:String = ""
@@ -41,15 +41,11 @@ class MyMatchesTableViewController: UITableViewController {
         self.dataSource.populateCellWithBlock { (cell: UITableViewCell, obj: NSObject) -> Void in
             let snap = obj as! FIRDataSnapshot
             
-            // Populate cell as you see fit, like as below
-            //cell.textLabel?.text = snap.key as String
-            
-            //cell.activityLabel.text = snap.text as String
             let myMatchCell = cell as! MyMatchesTableViewCell
             myMatchCell.matchKey = snap.key
             myMatchCell.accessoryType = .DisclosureIndicator
-            //activityLabel.text = snap.key
             
+            // populate the values on the cells for the current match
             for values in snap.children {
                 if(values.key == "receiverId"){
                     myMatchCell.receiverId = values.value

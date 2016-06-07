@@ -10,6 +10,7 @@ import UIKit
 
 class MySearchesTableViewCell: UITableViewCell {
 
+    // the Firebase key of the current cell
     var searchKey:String = ""
     
     @IBOutlet weak var emojiLabel: UILabel!
