@@ -78,6 +78,8 @@ class ViewController: UIViewController {
                 }
             }
         })
+        
+
     
         
         /*let facebookLogin = FBSDKLoginManager()
@@ -121,6 +123,9 @@ class ViewController: UIViewController {
         })*/
 
         
+    }
+    
+    @IBAction func cancelToInitialViewController(segue:UIStoryboardSegue) {
     }
 
 

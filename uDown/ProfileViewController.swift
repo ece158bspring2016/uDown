@@ -10,7 +10,6 @@ import UIKit
 import FirebaseAuth
 class ProfileViewController: UIViewController {
 
-    @IBOutlet var button: UIButton!
 
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet var settingsButton: UIButton!
@@ -34,15 +33,15 @@ class ProfileViewController: UIViewController {
         
             }
         }
-        button.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
+        //button.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
         settingsButton.addTarget(self, action: #selector(settingsButtonAction), forControlEvents: .TouchUpInside)
         
 
     }
     
-    func buttonAction(sender: UIButton!) {
-        self.performSegueWithIdentifier("logoutSegue", sender: nil)
-    }
+//    func buttonAction(sender: UIButton!) {
+//        self.performSegueWithIdentifier("logoutSegue", sender: nil)
+//    }
     func settingsButtonAction(sender: UIButton!) {
         self.performSegueWithIdentifier("settingsSegue", sender: nil)
     }

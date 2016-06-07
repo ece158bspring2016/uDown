@@ -20,7 +20,6 @@
 		23D5E0BC1D051DB500DFBA62 /* MyMatchesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D5E0BA1D051DB500DFBA62 /* MyMatchesTableViewCell.swift */; };
 		23D5E0BD1D051DB500DFBA62 /* MyMatchesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23D5E0BB1D051DB500DFBA62 /* MyMatchesTableViewCell.xib */; };
 		23D5E0BF1D051DCC00DFBA62 /* MyMatchesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D5E0BE1D051DCC00DFBA62 /* MyMatchesTableViewController.swift */; };
-		23DD54B21CFBCA82001D33FB /* ActivityDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DD54B11CFBCA82001D33FB /* ActivityDataSource.swift */; };
 		23DD54B71CFBD252001D33FB /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DD54B51CFBD252001D33FB /* ActivityTableViewCell.swift */; };
 		23DD54B81CFBD252001D33FB /* ActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23DD54B61CFBD252001D33FB /* ActivityTableViewCell.xib */; };
 		23DD54BA1CFBDCD3001D33FB /* SearchCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DD54B91CFBDCD3001D33FB /* SearchCreateViewController.swift */; };
@@ -54,7 +53,6 @@
 		23D5E0BA1D051DB500DFBA62 /* MyMatchesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMatchesTableViewCell.swift; sourceTree = "<group>"; };
 		23D5E0BB1D051DB500DFBA62 /* MyMatchesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyMatchesTableViewCell.xib; sourceTree = "<group>"; };
 		23D5E0BE1D051DCC00DFBA62 /* MyMatchesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMatchesTableViewController.swift; sourceTree = "<group>"; };
-		23DD54B11CFBCA82001D33FB /* ActivityDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDataSource.swift; sourceTree = "<group>"; };
 		23DD54B51CFBD252001D33FB /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		23DD54B61CFBD252001D33FB /* ActivityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityTableViewCell.xib; sourceTree = "<group>"; };
 		23DD54B91CFBDCD3001D33FB /* SearchCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCreateViewController.swift; sourceTree = "<group>"; };
@@ -122,7 +120,6 @@
 				238E565B1CE521D100FD9C35 /* Info.plist */,
 				3C30BB581CF25DD00018730E /* Constants.swift */,
 				3C30BB5A1CF25E360018730E /* DataService.swift */,
-				23DD54B11CFBCA82001D33FB /* ActivityDataSource.swift */,
 				3C0E8D1C1CFB962E003BF8FA /* ActivityPickerViewController.swift */,
 				23DD54B51CFBD252001D33FB /* ActivityTableViewCell.swift */,
 				23DD54B61CFBD252001D33FB /* ActivityTableViewCell.xib */,
@@ -291,7 +288,6 @@
 			files = (
 				3C30BB571CF25BD40018730E /* ProfileViewController.swift in Sources */,
 				238E56521CE521D100FD9C35 /* ViewController.swift in Sources */,
-				23DD54B21CFBCA82001D33FB /* ActivityDataSource.swift in Sources */,
 				23D5E0B81D05083700DFBA62 /* MySearchesTableViewCell.swift in Sources */,
 				2399C0A41D06B58F00F891EA /* iBeaconViewController.swift in Sources */,
 				238E56501CE521D100FD9C35 /* AppDelegate.swift in Sources */,

@@ -157,20 +157,17 @@
                                 <rect key="frame" x="145" y="20" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Settings" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gFg-6b-mtO">
-                                <rect key="frame" x="139" y="72" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="deleteButton" destination="SsX-c1-u7J" id="YFs-bd-mO0"/>
+                        <segue destination="liU-Hz-xxH" kind="unwind" identifier="SettingsToInitial" unwindAction="cancelToInitialViewController:" id="Cbe-XV-Xix"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qQD-xw-yy1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="liU-Hz-xxH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1793" y="-970"/>
         </scene>
@@ -246,6 +243,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pgm-TK-wWq">
                                 <rect key="frame" x="20" y="432" width="75" height="30"/>
                                 <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <segue destination="bb0-r8-fYs" kind="unwind" unwindAction="cancelToInitialViewController:" id="rtJ-fI-BjE"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="getdown2.png" translatesAutoresizingMaskIntoConstraints="NO" id="H0I-VQ-9l8">
                                 <rect key="frame" x="61" y="451" width="253" height="208"/>
@@ -266,15 +266,14 @@
                     <navigationItem key="navigationItem" title="Profile" id="z8u-QH-pQp"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="button" destination="Pgm-TK-wWq" id="vxn-cL-M4J"/>
                         <outlet property="profileImage" destination="dEJ-uz-Vhn" id="XFc-F2-Gpt"/>
                         <outlet property="settingsButton" destination="NvV-z6-dC9" id="WBN-0m-FAS"/>
                         <outlet property="usernameLabel" destination="X7G-43-dJM" id="swB-VY-7jZ"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="logoutSegue" id="trs-AE-nhA"/>
                         <segue destination="LQh-4D-F85" kind="show" identifier="settingsSegue" id="Kwq-NM-ILr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xKn-L4-W41" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="bb0-r8-fYs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1784.5" y="-41.5"/>
         </scene>

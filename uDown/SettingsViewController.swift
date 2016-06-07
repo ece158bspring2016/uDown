@@ -27,6 +27,8 @@ class SettingsViewController: UIViewController {
             userID = NSUserDefaults.standardUserDefaults().valueForKey("uid") as! String
             let currentUser = _USER_REF.child(userID);
             currentUser.removeValue();
+            
+            self.performSegueWithIdentifier("SettingsToInitial", sender: nil)
         }
     }
     
