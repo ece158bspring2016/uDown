@@ -101,7 +101,7 @@ class SearchCreateViewController: UIViewController, CLLocationManagerDelegate {
                     let searchLoc = CLLocation(latitude: searchLat!, longitude: searchLong!)
                     let distance = currentLoc.distanceFromLocation(searchLoc)
                     print("Comparing \(searchDict["searchTime"]): \(distance) to \(self.range.text)")
-                    if(distance < Double(self.range.text!)){
+                    if(distance < Double(self.range.text!) && distance < Double(searchDict["range"] as! String)){
                         print("Match found! We are in range")
                         
                         
@@ -120,6 +120,7 @@ class SearchCreateViewController: UIViewController, CLLocationManagerDelegate {
                             "activityTime": searchDict["activityTime"] as! String,
                             "latitude": searchDict["latitude"] as! String,
                             "longitude": searchDict["longitude"] as! String,
+                            "match": "my",
                             "messages": newMessageRef.key,
                             "matchTime": NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .ShortStyle)
                         ]
@@ -133,6 +134,7 @@ class SearchCreateViewController: UIViewController, CLLocationManagerDelegate {
                             "activityTime": self.time.text!,
                             "latitude": self.latitude.description,
                             "longitude": self.longitude.description,
+                            "match": "their",
                             "messages": newMessageRef.key,
                             "matchTime": NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .ShortStyle)
                         ]

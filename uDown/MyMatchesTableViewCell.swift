@@ -17,6 +17,7 @@ class MyMatchesTableViewCell: UITableViewCell {
     var matchKey:String = ""
     var messageKey:String = ""
     var receiverId:String = ""
+    var match:String = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()

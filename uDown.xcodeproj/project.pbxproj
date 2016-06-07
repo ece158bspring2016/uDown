@@ -13,6 +13,7 @@
 		238E56551CE521D100FD9C35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 238E56531CE521D100FD9C35 /* Main.storyboard */; };
 		238E56571CE521D100FD9C35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 238E56561CE521D100FD9C35 /* Assets.xcassets */; };
 		238E565A1CE521D100FD9C35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 238E56581CE521D100FD9C35 /* LaunchScreen.storyboard */; };
+		2399C0A41D06B58F00F891EA /* iBeaconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2399C0A31D06B58F00F891EA /* iBeaconViewController.swift */; };
 		23D5E0B51D0505F300DFBA62 /* MySearchesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D5E0B41D0505F300DFBA62 /* MySearchesTableViewController.swift */; };
 		23D5E0B81D05083700DFBA62 /* MySearchesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D5E0B61D05083700DFBA62 /* MySearchesTableViewCell.swift */; };
 		23D5E0B91D05083700DFBA62 /* MySearchesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23D5E0B71D05083700DFBA62 /* MySearchesTableViewCell.xib */; };
@@ -45,6 +46,7 @@
 		238E56561CE521D100FD9C35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		238E56591CE521D100FD9C35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		238E565B1CE521D100FD9C35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2399C0A31D06B58F00F891EA /* iBeaconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iBeaconViewController.swift; sourceTree = "<group>"; };
 		23D5E0B41D0505F300DFBA62 /* MySearchesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySearchesTableViewController.swift; sourceTree = "<group>"; };
 		23D5E0B61D05083700DFBA62 /* MySearchesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySearchesTableViewCell.swift; sourceTree = "<group>"; };
 		23D5E0B71D05083700DFBA62 /* MySearchesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MySearchesTableViewCell.xib; sourceTree = "<group>"; };
@@ -122,7 +124,6 @@
 				3C0E8D1C1CFB962E003BF8FA /* ActivityPickerViewController.swift */,
 				23DD54B51CFBD252001D33FB /* ActivityTableViewCell.swift */,
 				23DD54B61CFBD252001D33FB /* ActivityTableViewCell.xib */,
-				23DD54BB1CFBF06C001D33FB /* ChatViewController.swift */,
 				23DD54B91CFBDCD3001D33FB /* SearchCreateViewController.swift */,
 				23D5E0B41D0505F300DFBA62 /* MySearchesTableViewController.swift */,
 				23D5E0B61D05083700DFBA62 /* MySearchesTableViewCell.swift */,
@@ -130,6 +131,8 @@
 				23D5E0BE1D051DCC00DFBA62 /* MyMatchesTableViewController.swift */,
 				23D5E0BA1D051DB500DFBA62 /* MyMatchesTableViewCell.swift */,
 				23D5E0BB1D051DB500DFBA62 /* MyMatchesTableViewCell.xib */,
+				23DD54BB1CFBF06C001D33FB /* ChatViewController.swift */,
+				2399C0A31D06B58F00F891EA /* iBeaconViewController.swift */,
 			);
 			path = uDown;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 				TargetAttributes = {
 					238E564B1CE521D100FD9C35 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = T475485762;
 					};
 				};
 			};
@@ -286,6 +290,7 @@
 				238E56521CE521D100FD9C35 /* ViewController.swift in Sources */,
 				23DD54B21CFBCA82001D33FB /* ActivityDataSource.swift in Sources */,
 				23D5E0B81D05083700DFBA62 /* MySearchesTableViewCell.swift in Sources */,
+				2399C0A41D06B58F00F891EA /* iBeaconViewController.swift in Sources */,
 				238E56501CE521D100FD9C35 /* AppDelegate.swift in Sources */,
 				3C0E8D1D1CFB962E003BF8FA /* ActivityPickerViewController.swift in Sources */,
 				3C30BB591CF25DD00018730E /* Constants.swift in Sources */,
@@ -409,6 +414,8 @@
 			baseConfigurationReference = 4FC46A3F72CAC2E278CC5D09 /* Pods-uDown.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -418,6 +425,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oscarpan.ece158.uDown;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -426,6 +434,8 @@
 			baseConfigurationReference = 289A7CEFA867012891D9CB45 /* Pods-uDown.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -435,6 +445,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oscarpan.ece158.uDown;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

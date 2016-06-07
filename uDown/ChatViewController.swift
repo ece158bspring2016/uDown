@@ -15,6 +15,8 @@ class ChatViewController: JSQMessagesViewController {
     
     // MARK: Properties
     var receiverId: String!
+    var match: String!
+    var loaded = false
     
     let rootRef = FIRDatabase.database().reference()
     var messageRef: FIRDatabaseReference!
@@ -113,20 +115,26 @@ class ChatViewController: JSQMessagesViewController {
     }
     
     private func observeMessages() {
-        // 1
-        let messagesQuery = messageRef.queryLimitedToLast(25)
-        // 2
-        messagesQuery.observeEventType(.ChildAdded) { (snapshot: FIRDataSnapshot!) in
-            // 3
-            let id = snapshot.value!["senderId"] as! String
-            let text = snapshot.value!["text"] as! String
+        
+        if(loaded == false){
+            // 1
+            let messagesQuery = messageRef.queryLimitedToLast(25)
+            // 2
+            messagesQuery.observeEventType(.ChildAdded) { (snapshot: FIRDataSnapshot!) in
+                // 3
+                let id = snapshot.value!["senderId"] as! String
+                let text = snapshot.value!["text"] as! String
+                
+                // 4
+                self.addMessage(id, text: text)
+                
+                // 5
+                self.finishReceivingMessage()
+            }
             
-            // 4
-            self.addMessage(id, text: text)
-            
-            // 5
-            self.finishReceivingMessage()
+            loaded = true
         }
+        
     }
     
     private func observeTyping() {
@@ -181,6 +189,27 @@ class ChatViewController: JSQMessagesViewController {
         let bubbleImageFactory = JSQMessagesBubbleImageFactory()
         outgoingBubbleImageView = bubbleImageFactory.outgoingMessagesBubbleImageWithColor(UIColor.jsq_messageBubbleBlueColor())
         incomingBubbleImageView = bubbleImageFactory.incomingMessagesBubbleImageWithColor(UIColor.jsq_messageBubbleLightGrayColor())
+    }
+    
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: sender)
+        if(segue.identifier == "ChatToBeacon"){
+            let beaconVc = segue.destinationViewController as! iBeaconViewController
+            if(match == "my"){
+                beaconVc.minor1 = 54627
+                beaconVc.minor2 = 54628
+            }
+            else{
+                beaconVc.minor1 = 54628
+                beaconVc.minor2 = 54627
+            }
+            
+        }
+    }
+    
+    @IBAction func cancelToMyChatsViewController(segue:UIStoryboardSegue) {
     }
     
 }

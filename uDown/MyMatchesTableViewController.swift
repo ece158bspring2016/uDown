@@ -19,6 +19,7 @@ class MyMatchesTableViewController: UITableViewController {
     var selectedMatchKey:String = ""
     var selectedMessageKey:String = ""
     var selectedMatchUserId:String = ""
+    var selectedMatch:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +69,9 @@ class MyMatchesTableViewController: UITableViewController {
                 if(values.key == "messages"){
                     myMatchCell.messageKey = values.value
                 }
+                if(values.key == "match"){
+                    myMatchCell.match = values.value
+                }
             }
         }
         
@@ -91,6 +95,7 @@ class MyMatchesTableViewController: UITableViewController {
         selectedMatchKey = cell.matchKey
         selectedMessageKey = cell.messageKey
         selectedMatchUserId = cell.receiverId
+        selectedMatch = cell.match
         self.performSegueWithIdentifier("MatchToChat", sender: nil)
     }
     
@@ -102,6 +107,7 @@ class MyMatchesTableViewController: UITableViewController {
             print("Segue to messages \(selectedMessageKey)")
             chatVc.messageRef = FIRDatabase.database().reference().child("messages").child(selectedMessageKey)
             chatVc.receiverId = selectedMatchUserId
+            chatVc.match = selectedMatch
         }
     }
     
