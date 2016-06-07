@@ -88,6 +88,7 @@ class SearchCreateViewController: UIViewController, CLLocationManagerDelegate {
         ref.child("users").child((FIRAuth.auth()?.currentUser?.uid)!).child("searches").child(newSearchRef.key).setValue(usersSearch)
         
         
+        var matches = 0
         ref.child("searches").observeSingleEventOfType(.Value, withBlock: { (snapshot) in
             for child in snapshot.children {
                 let searchKey = snapshot.childSnapshotForPath(child.key).key
@@ -103,8 +104,7 @@ class SearchCreateViewController: UIViewController, CLLocationManagerDelegate {
                     print("Comparing \(searchDict["searchTime"]): \(distance) to \(self.range.text)")
                     if(distance < Double(self.range.text!) && distance < Double(searchDict["range"] as! String)){
                         print("Match found! We are in range")
-                        
-                        
+                        matches += 1
                         let newMessage: [String: String] = [
                             "senderId": "uDownasdf",
                             "text": "Hey! We matched!"
@@ -141,16 +141,30 @@ class SearchCreateViewController: UIViewController, CLLocationManagerDelegate {
                     
                         self.ref.child("users").child(searchDict["user_uid"] as! String).child("searches").child(searchKey).child("matches").child(newSearchRef.key).setValue(theirMatched)
                         
-                        
-                        
-                        
-                        
-                        
                         //newSearchRef.child("matches").child(child.key).setValue(myMatched)
                         //self.ref.child("searches").child(child.key).child("matches").child(newSearchRef.key).setValue(theirMatched)
                     }
                 }
             }
+            if(matches > 1)
+            {
+                let myMessage = "Found \(matches) matches!"
+                let myAlert = UIAlertController(title: myMessage, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+                
+                myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                
+                self.presentViewController(myAlert, animated: true, completion: nil)
+            }
+            else if(matches == 1)
+            {
+                let myMessage = "Found a match!"
+                let myAlert = UIAlertController(title: myMessage, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+                
+                myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                
+                self.presentViewController(myAlert, animated: true, completion: nil)
+            }
+           
             
             
         })
